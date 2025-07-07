@@ -44,9 +44,16 @@ git clone https://github.com/RcO2Rob/Dis-Project.git
 cd ~/catkin_ws/src
 mv Dis-Project/myproject .
 
+# Modify move_base launch file
+roscd turtlebot3_navigation/launch/
+sudo vim move_base.launch
+
+# Edit line 4 to <arg name="cmd_vel_topic" default="/nav_vel" />
+
 # Build catkin workspace
 cd ~/catkin_ws
 catkin_make
+source devel/setup.bash
 ```
 
 ### 📶 5. Set Up ROS# Unity Connection
