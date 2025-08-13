@@ -1,0 +1,25 @@
+<launch>
+  <arg name="map_file"  default="/home/raphael/room2.yaml"/>
+  <arg name="bag_prefix" default="session"/>
+  <arg name="topics" default="/haptic_vel /nav_vel /cmd_vel /scan /odom /move_base/goal"/>
+  <arg name="bag_dir" default="/home/raphael/catkin_ws/bags"/>
+  <arg name="times" default="manual_timestamp"/>
+
+
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+
+  <include file="$(find turtlebot3_navigation)/launch/turtlebot3_navigation.launch">
+    <arg name="map_file" value="$(arg map_file)"/>
+  </include>
+
+  <node pkg="myproject"
+      type="shared_controller.py"
+      name="shared_controller"
+      output="screen"/>
+
+  <node pkg="rosbag"
+        type="record"
+        name="bag_recorder"
+        args="-O $(arg bag_dir)/$(arg bag_prefix)_$(arg times) $(arg topics)"
+        output="screen"/>
+</launch>

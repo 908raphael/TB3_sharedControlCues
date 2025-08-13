@@ -1,0 +1,15 @@
+<launch>
+  <arg name="map_file"  default="/home/raphael/tutorial.yaml"/>
+
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+
+  <include file="$(find turtlebot3_navigation)/launch/turtlebot3_navigation.launch">
+    <arg name="map_file" value="$(arg map_file)"/>
+  </include>
+
+  <node pkg="myproject"
+      type="shared_controller.py"
+      name="shared_controller"
+      output="screen"/>
+
+</launch>

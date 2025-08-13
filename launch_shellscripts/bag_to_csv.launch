@@ -1,0 +1,11 @@
+<launch>
+  <arg name="bag_file" default="session.bag"/>
+  <arg name="out_dir"  default="/home/raphael/catkin_ws/csv"/>
+  <arg name="topics"   default="/haptic_vel /nav_vel /cmd_vel /scan /odom /move_base/goal"/>
+
+  <node pkg="myproject"
+        type="bag_to_csv.py"
+        name="bag_to_csv"
+        output="screen"
+        args="$(arg bag_file) $(arg out_dir) $(arg topics)" />
+</launch>
