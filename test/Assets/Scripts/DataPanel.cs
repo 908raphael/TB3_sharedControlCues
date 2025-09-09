@@ -13,7 +13,7 @@ public class DataPanel : MonoBehaviour
     public TextMeshProUGUI targetText;
     // private int collisionCount = 0;
     private float time = 0.0f;
-    private float countDown = 300.0f;
+    private float countDown = 180.0f;
     private bool timerActive = false;
     private bool locker = false;
     
@@ -30,6 +30,7 @@ public class DataPanel : MonoBehaviour
         if(timerActive && !DataManager.Instance.taskFinished){
             time += Time.deltaTime;
             countDown = 180.0f - time;
+            //countDown = 105.0f;
             timeText.text = "Time: " + countDown.ToString("F2");
         }
         // else if(timerActive && !locker ){

@@ -17955,9 +17955,13 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5157883613867612669, guid: 7531631efe09cd04c9605d458123a0cd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5402907843288363022, guid: 7531631efe09cd04c9605d458123a0cd, type: 3}
       propertyPath: SpringGMag
-      value: 0.025
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 5402907843288363022, guid: 7531631efe09cd04c9605d458123a0cd, type: 3}
       propertyPath: SpringGDir.x
@@ -21565,7 +21569,7 @@ MonoBehaviour:
   targetReached: 0
   rosConnector: {fileID: 129442502}
   DM: {fileID: 1836740738}
-  username: FIXBROKENFKINGARM
+  username: _PhotoTaking
   sessionDir: 
 --- !u!1 &1850136850
 GameObject:
@@ -26050,16 +26054,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1200772223}
     - target: {fileID: 5055662617435062116, guid: 47ddcf0dc9b182649a49c490fa03a9ae, type: 3}
+      propertyPath: linearRatio
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055662617435062116, guid: 47ddcf0dc9b182649a49c490fa03a9ae, type: 3}
       propertyPath: hapticPlugin
       value: 
       objectReference: {fileID: 495746227}
     - target: {fileID: 5055662617435062116, guid: 47ddcf0dc9b182649a49c490fa03a9ae, type: 3}
       propertyPath: CAThresholdUp
-      value: 0.87
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5055662617435062116, guid: 47ddcf0dc9b182649a49c490fa03a9ae, type: 3}
       propertyPath: CAThresholdLow
-      value: 0.15
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 5055662617435062116, guid: 47ddcf0dc9b182649a49c490fa03a9ae, type: 3}
       propertyPath: Local_nav_line
@@ -26079,7 +26087,7 @@ PrefabInstance:
       objectReference: {fileID: 1801013933}
     - target: {fileID: 5055662617435062116, guid: 47ddcf0dc9b182649a49c490fa03a9ae, type: 3}
       propertyPath: forceThreadholdLow
-      value: 1.1
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 6196866404103942522, guid: 47ddcf0dc9b182649a49c490fa03a9ae, type: 3}
       propertyPath: PublishedTransform
