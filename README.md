@@ -63,10 +63,6 @@ source devel/setup.bash
 sudo apt update
 sudo apt install ros-noetic-rosbridge-server
 
-# Launch roscore and rosbridge in two separate terminals
-roscore
-roslaunch rosbridge_server rosbridge_websocket.launch
-
 # Find IP address of WSL
 hostname -I
 ```
@@ -74,12 +70,6 @@ hostname -I
 <p align="center">
 <img src="Images/RosconnectorGuide.png"/>
 </p>
-
-```bash
-# Run shared_control.py script on a separate terminal
-cd ~/catkin_ws/src/myproject/src/
-python3 shared_controller.py
-```
 
 ### 📶 6. Set Up Turtlebot3 Packages
 
@@ -98,15 +88,15 @@ mv room2.pgm ~/
 </p>
 
 ```bash
-# Launch turtlebot3 navigation on a seperate terminal
-roslaunch turtlebot3_navigation  turtlebot3_navigation.launch map_file:=/home/[Enter your root directory name]/room2.yaml
+# Move all shell scripts to catkin_ws, then launch shell script on a separate terminal
+./run_experiment.sh
 ```
 
-### ✅ 7. Run your scene, and everything should be ready to go!
+### ✅ 7. Run your experiment scene, and everything should be ready to go!
 
 ## Brief Scene Descriptions
 Scenes Main Task A, B, and C differ by the location of target objects. In all four conditions (modes), they differ only in the clues presented.
 - Condition A has no cues 
-- Condition B has a mini-map, collision warning line, and repulsive force
-- Condition C has a guidance force and an autonomous level indicator
-- Condition D combines the cues from B and C.
+- Condition B has a haptic guidance force
+- Condition C has a direction indicator line and an autonomy level indicator bar, and haptic guidance force
+- Condition D combines the cues from B and C, and mini-map, collision detection lines, and anti-collision braking cue.
