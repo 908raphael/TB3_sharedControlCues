@@ -1,4 +1,4 @@
-# Mobile-Robot-Project
+# MSc Dissertation – Human-Robot Teleoperation Simulation
 
 This repository contains a Unity-based robot simulation integrated with a ROS backend. It demonstrates distributed control, sensor communication, and real-time interaction between Unity and ROS.
 
