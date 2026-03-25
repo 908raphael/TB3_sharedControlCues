@@ -1,21 +1,64 @@
 ## MSc Dissertation – Human–Robot Teleoperation System with Shared Control and Dynamic Role Exchange
 
-This repository contains a real-time human-robot teleoperation system by integrating a Unity based simulation environment with ROS backend services. It demonstrates distributed control, sensor communication, and real-time interaction between Unity and ROS.
+This repository contains a real-time human-robot teleoperation system integrating a Unity based simulation environment with ROS backend services. It demonstrates distributed control, sensor communication, and real-time interaction between Unity and ROS.
 
 ---
 ### Mini-Portfolio
 
 #### Description
-This project was developed as part of my MSc Computer Science dissertation at the University of Nottingham. The project aimed to explore how sensory cues could improve shared-control navigation in human-robot teleoperation. This portfolio summarises the dissertation paper in three sections: *Technical Architecture*, *Control Algorithm & System Design*, and *User Study and Data Analysis*.
+This project was developed as part of my MSc Computer Science dissertation at the University of Nottingham. The project aimed to explore how sensory cues could improve shared-control navigation in human-robot teleoperation. This mini-portfolio summarises the dissertation paper in three sections: *Technical Architecture*, *Control Algorithm & System Design*, and *User Study and Data Analysis*.
+
+*Key Technologies: Unity (C#), ROS (Python), rosbridge, RViz, TurtleBot3, rosbag*
 
 #### 1. Technical Architecture
 This project involved building a real-time human-robot teleoperation system by integrating a Unity-based simulation environment with ROS backend services. Unity (C#) was used to create a 3D search-and-rescue environment and handle user interaction, while ROS (Python) managed robot control, navigation (via move_base), and sensor data processing.
 
-#### 2.
+Communication between the two systems was achieved using rosbridge, enabling data exchange in real time. Robot state, control commands, and sensor data were continuously synchronised between Unity and ROS. RViz was used for visualising robot navigation and debugging, while rosbag was used to record experimental data for later analysis.
+
+The system was designed to operate with low latency, ensuring smooth teleoperation and responsive interaction between the human operator and robot autonomy.
+
+
+<p align="center">
+<img src="Images/Birdseye.jpg"/>
+<img src="Images/FPV.jpg"/>
+</p>
+
+<p align="center">
+Image 1 (Left): Birdseye view of the Unity3D-based SAR environment with multiple rooms and obstacles used for the study. 
+</p>
+<p align="center">
+Image 2 (Right): First person view of the SAR environment presented to human users during the experiment.
+</p>
+
+#### 2. Control Algorithm & System Design
+The system implemented a shared control framework combining human input and autonomous navigation through a negotiation model. A haptic device provided user input, while autonomy commands were generated using ROS navigation. These inputs were blended using a spring–damper model to produce a unified control signal.
+
+A finite state machine (FSM) governed dynamic role exchange between human control, shared control, and autonomous control. The transition logic was based on factors such as user-applied force and alignment between human and autonomous inputs.
+<p align="center">
+<img src="Images/Architecture.jpg"/>
+</p>
+
+<p align="center">
+Image 3: Shared control architecture: (a) haptic negotiation model with HIP, CIP, NIP, and Intercept is used for autonomy negotiation and role allocation. (b) FSM governs role exchanges based on human applied forces and human-autonomy input alignment.
+</p>
+
+#### 3. User Study and Data Analysis
+A user study was conducted with 15 participants to evaluate the effectiveness of different feedback cues in a simulated search-and-rescue task. Participants completed multiple trials under varying conditions, including haptic, egocentric, and exocentric feedback.
+
+Experimental data was recorded using rosbag and processed to extract performance and behavioural metrics. These included collision counts, trajectory smoothness (jerk and acceleration), control allocation, and alignment between human and autonomous inputs.
+
+Data was resampled and cleaned to remove noise, and statistical analysis was performed using repeated-measures ANOVA and non-parametric tests. The results showed that haptic feedback reduced user effort, while visual cues improved navigation safety and trajectory smoothness, highlighting the importance of multimodal feedback in shared autonomy systems.
+
+<p align="center">
+<img src="Images/Setup.jpg"/>
+</p>
+
+<p align="center">
+Image 4: The experimental setup
+</p>
+
+
 ---
-
-
-
 
 ## Setup Guide
 
