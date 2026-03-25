@@ -1,27 +1,40 @@
-# MSc Dissertation – Human-Robot Teleoperation Simulation
+## MSc Dissertation – Human–Robot Teleoperation System with Shared Control and Dynamic Role Exchange
 
-This repository contains a Unity-based robot simulation integrated with a ROS backend. It demonstrates distributed control, sensor communication, and real-time interaction between Unity and ROS.
+This repository contains a real-time human-robot teleoperation system by integrating a Unity based simulation environment with ROS backend services. It demonstrates distributed control, sensor communication, and real-time interaction between Unity and ROS.
 
 ---
+### Mini-Portfolio
 
-## 🚀 Getting Started
+#### Description
+This project was developed as part of my MSc Computer Science dissertation at the University of Nottingham. The project aimed to explore how sensory cues could improve shared-control navigation in human-robot teleoperation. This portfolio summarises the dissertation paper in three sections: *Technical Architecture*, *Control Algorithm & System Design*, and *User Study and Data Analysis*.
+
+#### 1. Technical Architecture
+This project involved building a real-time human-robot teleoperation system by integrating a Unity-based simulation environment with ROS backend services. Unity (C#) was used to create a 3D search-and-rescue environment and handle user interaction, while ROS (Python) managed robot control, navigation (via move_base), and sensor data processing.
+
+#### 2.
+---
+
+
+
+
+## Setup Guide
 
 Follow the steps below to set up the project on your local machine (This guide is written specifically for Windows and Ubuntu 20.04).
 
-### 📥 1. Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/imorange/Mobile-Robot-Project.git
 cd Mobile-Robot-Project
 ```
 
-### 📳 2. Connect the Haptic device to your machine
+### 2. Connect the Haptic device to your machine
 
 - [Read documentation and **install their drivers (OpenHaptics for Windows Developer Edition v3.5)**](https://support.3dsystems.com/s/article/OpenHaptics-for-Windows-Developer-Edition-v35?language=en_US)
 
 - Run Touch Smart Setup and initialise Haptic device
 
-### 🎮 3. Open the Unity Project
+### 3. Open the Unity Project
 
 - Open [Unity Hub](https://unity.com/download)
 
@@ -31,7 +44,7 @@ cd Mobile-Robot-Project
 
 - Open it with Unity 2021.3+ (or your required version)
 
-### 🤖 4. Set Up the ROS Package (Ubuntu 20.04)
+### 4. Set Up the ROS Package (Ubuntu 20.04)
 
 #### [Ubuntu Install of ROS Noetic](https://wiki.ros.org/noetic/Installation/Ubuntu) is essential. Follow the steps in the link if not been configured on your own machine.
 
@@ -56,7 +69,7 @@ catkin_make
 source devel/setup.bash
 ```
 
-### 📶 5. Set Up ROS# Unity Connection
+### 5. Set Up ROS# Unity Connection
 
 ```bash
 # Install rosbridge_server in WSL
@@ -71,7 +84,7 @@ hostname -I
 <img src="Images/RosconnectorGuide.png"/>
 </p>
 
-### 📶 6. Set Up Turtlebot3 Packages
+### 6. Set Up Turtlebot3 Packages
 
 #### [Turtlebot3 Packages](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/) are essential. Follow the steps in the link if not been configured on your own machine.
 
@@ -92,11 +105,11 @@ mv room2.pgm ~/
 ./run_experiment.sh
 ```
 
-### ✅ 7. Run your experiment scene, and everything should be ready to go!
+### 7. Run your experiment scene, and everything should be ready to go!
 
-## Brief Scene Descriptions
-Scenes Main Task A, B, and C differ by the location of target objects. In all four conditions (modes), they differ only in the clues presented.
-- Condition A has no cues 
-- Condition B has a haptic guidance force
-- Condition C has a direction indicator line and an autonomy level indicator bar, and haptic guidance force
-- Condition D combines the cues from B and C, and mini-map, collision detection lines, and anti-collision braking cue.
+## Brief Scene Description
+The location of target objects are placed randomly with one target in each room. In all four conditions (modes), they differ only in the clues presented.
+- Condition A has no cues.
+- Condition B has Haptic guidance. Haptic guidance is a force feedback proportional to control distribution, enabling the operator to sense autonomy involvement. The feedback reflects HIP–NIP displacement and provides continuity across user, shared, and autonomy control states.
+- Condition C has Haptic + Egocentric Cues. Egocentric Cues include (i) anautonomy indicator bar showing the current control allocation parameter 𝛼, and (ii) a direction line clarifying haptic device orientation. These cues clarify autonomy intent and reduce confusion under haptic guidance.
+- Condition D Haptic + Egocentric + Exocentric Cues. Exocentric Cues include (i) a top-down mini-map with robot pose and autonomy target, (ii) obstacle detection lines whose opacity scales with distance, and (iii) an anti-collision braking indicator with both visual text and haptic resistance. Together,these cues enhance situational awareness and highlight autonomy’s environmental reasoning.
